@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcwPollCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="10dp"
+        android:elevation="10dp">
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="5dp">
+
+            <TextView
+                android:id="@+id/twPollText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/titillium_web_bold"
+                android:textSize="20sp"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/textView3"
+                tools:layout_editor_absoluteX="0dp">
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:text="Onaylamayan:"
+                    tools:layout_editor_absoluteX="203dp"
+                    tools:layout_editor_absoluteY="35dp" />
+
+                <TextView
+                    android:id="@+id/twDisagreeCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/red"
+                    android:layout_marginEnd="20dp"
+                    tools:layout_editor_absoluteX="303dp"
+                    tools:layout_editor_absoluteY="35dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:text="Onaylayan:"
+                    tools:layout_editor_absoluteX="81dp"
+                    tools:layout_editor_absoluteY="35dp" />
+
+                <TextView
+                    android:id="@+id/twAgreeCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:textColor="@color/green"
+                    tools:layout_editor_absoluteX="167dp"
+                    tools:layout_editor_absoluteY="35dp" />
+            </LinearLayout>
+
+            <RadioGroup
+                android:id="@+id/rgRadioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+                <RadioButton
+                    android:id="@+id/radio_button_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:text="Onaylamıyorum"
+                    android:fontFamily="@font/titillium_web"/>
+
+                <RadioButton
+                    android:id="@+id/radio_button_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Onaylıyorum"
+                    android:fontFamily="@font/titillium_web"/>
+            </RadioGroup>
+
+           <androidx.constraintlayout.widget.ConstraintLayout
+               android:gravity="center"
+               android:layout_gravity="center"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal">
+
+               <Button
+                   android:id="@+id/btnSendAnswer"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Gönder"
+
+                   android:textSize="12sp"
+                   app:layout_constraintBottom_toBottomOf="parent"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toTopOf="parent" />
+
+               <ImageView
+                   android:id="@+id/btnCreatePdfFile"
+                   android:layout_width="wrap_content"
+                   android:layout_height="match_parent"
+                   android:layout_marginEnd="10dp"
+                   android:src="@drawable/ic_baseline_picture_as_pdf_24"
+                   app:layout_constraintBottom_toBottomOf="parent"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintTop_toTopOf="parent" />
+           </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

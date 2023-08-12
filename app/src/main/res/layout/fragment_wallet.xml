@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:background="@color/grey"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.fragments.WalletFragment">
+
+        <include
+            android:id="@+id/customHeader"
+            layout="@layout/custom_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/customHeader">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+               <LinearLayout
+                   android:layout_marginTop="5dp"
+                   android:layout_marginHorizontal="10dp"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal"
+                   android:layout_gravity="center"
+                   android:gravity="center">
+                   <TextView
+                       android:gravity="center"
+                       android:layout_width="0dp"
+                       android:layout_weight="1"
+                       android:layout_height="wrap_content"
+                       android:text="Mevcut Birikim:"
+                       android:fontFamily="@font/titillium_web_bold"
+                       android:textSize="20sp"/>
+
+                   <TextView
+                       android:gravity="center"
+                       android:id="@+id/twCurrentBudget"
+                       android:layout_width="0dp"
+                       android:layout_weight="1"
+                       android:layout_height="wrap_content"
+                       android:textSize="20sp"/>
+
+
+                   <androidx.constraintlayout.widget.ConstraintLayout
+                       android:layout_width="40dp"
+                       android:layout_height="wrap_content">
+
+                       <ImageView
+                           android:id="@+id/btnCreatePdfFile"
+                           android:layout_width="25dp"
+                           android:layout_height="25dp"
+                           android:src="@drawable/ic_baseline_picture_as_pdf_24"
+                           android:visibility="visible"
+                           app:layout_constraintBottom_toBottomOf="parent"
+                           app:layout_constraintEnd_toEndOf="parent"
+                           app:layout_constraintStart_toStartOf="parent"
+                           app:layout_constraintTop_toTopOf="parent" />
+
+                       <ProgressBar
+                           android:id="@+id/pbProgressBar"
+                           android:layout_width="25dp"
+                           android:layout_height="25dp"
+                           android:visibility="gone"
+                           app:layout_constraintBottom_toBottomOf="parent"
+                           app:layout_constraintEnd_toEndOf="parent"
+                           app:layout_constraintStart_toStartOf="parent"
+                           app:layout_constraintTop_toTopOf="parent" />
+                   </androidx.constraintlayout.widget.ConstraintLayout>
+               </LinearLayout>
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp" />
+                <LinearLayout
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:gravity="center"
+                        android:layout_width="0dp"
+                        android:layout_weight="6"
+                        android:layout_height="wrap_content"
+                        android:text="Yapılan İşlem"
+                        android:fontFamily="@font/titillium_web_bold"/>
+                    <TextView
+                        android:gravity="center"
+                        android:layout_width="0dp"
+                        android:layout_weight="3"
+                        android:layout_height="wrap_content"
+                        android:text="Tutar"
+                        android:fontFamily="@font/titillium_web_bold"/>
+                    <TextView
+                        android:gravity="end"
+                        android:layout_width="0dp"
+                        android:layout_weight="3"
+                        android:layout_height="wrap_content"
+                        android:text="Gider/Gelir"
+                        android:fontFamily="@font/titillium_web_bold"/>
+                </LinearLayout>
+
+                <ProgressBar
+                    android:id="@+id/pbFinancialEvents"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rwFinancialEvents"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/materialDivider"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/materialCardView3" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="70dp"
+            android:elevation="5dp"
+            android:padding="5dp"
+            app:cardCornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/materialDivider">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/titillium_web_bold"
+                    android:text="Bu Ayın Aidat Ödeme Durumu"
+                    tools:layout_editor_absoluteX="5dp"
+                    tools:layout_editor_absoluteY="295dp" />
+
+                <ProgressBar
+                    android:id="@+id/pbPaymentStatus"
+                    android:layout_gravity="center"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rwDuesPaymentStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp">
+
+                </androidx.recyclerview.widget.RecyclerView>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </LinearLayout>
+</layout>
